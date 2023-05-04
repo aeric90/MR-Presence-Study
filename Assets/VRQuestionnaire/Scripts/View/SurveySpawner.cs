@@ -5,6 +5,7 @@ public class SurveySpawner : MonoBehaviour
     public GameObject targetObject;
     public void SpawnSurvey()
     {
+        /*
         if (targetObject.activeSelf)
         {
             AlarmManager.watchTimer.surveyStatus = false;
@@ -15,5 +16,6 @@ public class SurveySpawner : MonoBehaviour
             AlarmManager.watchTimer.surveyStatus = true;
             targetObject.SetActive(true);
         }
+        */
     }
 }

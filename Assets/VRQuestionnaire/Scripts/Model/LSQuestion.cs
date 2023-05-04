@@ -20,18 +20,18 @@ public class LSQuestion : Question
         if(questionData.lowerBound >=0 && questionData.lowerBound <=1)
             if(questionData.upperBound >= 2 && questionData.upperBound <=7)
             {
-                Buttons[k].GetComponentInChildren<TextMeshProUGUI>().text = questionData.leftLabel;
+                Buttons[k].GetComponentInChildren<SCALEButtonController>().UpdateLableText(questionData.leftLabel);
                 
                 for (int i = questionData.lowerBound; i <= questionData.upperBound; i++)
                 {  
-                    Buttons[k].GetComponentInChildren<TextMeshPro>().text = i.ToString();
+                    Buttons[k].GetComponentInChildren<SCALEButtonController>().UpdateBottomText(i.ToString());
                     Buttons[k].SetActive(true);
                     k++;
                 }
                     if(questionData.lowerBound == 0)
-                    Buttons[questionData.upperBound].GetComponentInChildren<TextMeshProUGUI>().text = questionData.rightLabel;
-                    if(questionData.lowerBound == 1)
-                    Buttons[questionData.upperBound-1].GetComponentInChildren<TextMeshProUGUI>().text = questionData.rightLabel;
+                    Buttons[questionData.upperBound].GetComponentInChildren<SCALEButtonController>().UpdateLableText(questionData.rightLabel);
+                if (questionData.lowerBound == 1)
+                    Buttons[questionData.upperBound-1].GetComponentInChildren<SCALEButtonController>().UpdateLableText(questionData.rightLabel);
             }
             else
             {
@@ -48,7 +48,6 @@ public class LSQuestion : Question
         //Loop buttons to reset all text to an empty string
         Buttons.ForEach(delegate (GameObject button) {
             button.GetComponentInChildren<TextMeshPro>().text = "";
-            button.GetComponentInChildren<TextMeshProUGUI>().text = "";
             button.SetActive(false);
         });
     }

@@ -7,6 +7,8 @@ using TMPro;
 
 public class SurveyManager : MonoBehaviour
 {
+    public static SurveyManager instance = null;
+    public int surveyID;
     //Variables connected to gameobjects (metadata)
     public Transform questionPositions;
     public TextMeshPro title;
@@ -22,12 +24,16 @@ public class SurveyManager : MonoBehaviour
     int posIndex;
     int questionIndex;
     bool isCleanedVacantContainers = false;
+    public int lastIndexFromPreviousSurvey;
     // Contains the data received from google forms
     private GoogleSurveyData googleSurveyData;
     // Keeps track of questions on each page to view them according to the page we are currently on.
     Dictionary<int, List<PageQuestion>> questionsPerPage;
+
+    private List<GameObject> QuestionPrefabs = new List<GameObject>();
     void Awake()
     {
+        if (instance == null) instance = this;
         surveyPage = 0;
         posIndex = 0;
         questionIndex = 0;
@@ -37,20 +43,35 @@ public class SurveyManager : MonoBehaviour
     }
     void Start()
     {
+        Setup(surveyID);
+    }
+
+    public void Setup(int surveyID)
+    {
+        Debug.Log("SETTING UP SURVEY " + surveyID);
         //Data should have been loaded in PlayfabController since this will trigger when clicking on the button tab
-        this.googleSurveyData = PlayFabController.PFC.googleSurveyData[0];
+        this.googleSurveyData = PlayFabController.PFC.googleSurveyData[surveyID];
+        lastIndexFromPreviousSurvey = PlayFabController.PFC.latestIndex;
         if (googleSurveyData == null)
         {
             Debug.LogError("googleSurveyData has not been aquired, please reach out to developer!");
             return;
         }
-        //We update the meta data
+
+        foreach (GoogleQuestionData item in googleSurveyData.items)
+        {
+            if(GameController.instance.currentTrialID > 0) { 
+                item.index += 6 * (GameController.instance.currentTrialID - 1) + 3;
+            }
+        }
         updateMetaData();
+
 
         // Instantiates question prefabs at the positions of the Containers gameobjects in the inspector
         for (int i = 0; i < numberofQuestions; i++)
         {
             GameObject question = Instantiate(QuestionFactory.CreateQuestion(googleSurveyData.items[i]), questionPositions.GetChild(posIndex));
+            QuestionPrefabs.Add(question);
             PageQuestion pageQuestion = question.AddComponent<PageQuestion>();
             pageQuestion.page = surveyPage;
             // Turn off all questions not on the first page, so the questions on the first page appear only.
@@ -93,7 +114,7 @@ public class SurveyManager : MonoBehaviour
     private void Update()
     {
         //Before cleaning up, this is the last page so we need to activate the submit button only if the questions satisfy the isRequired condition.
-            submitButton.SetActive(QuestionsSatisfyIsRequired());
+        submitButton.SetActive(QuestionsSatisfyIsRequired());
 
     }
     public void Prev()
@@ -211,13 +232,12 @@ public class SurveyManager : MonoBehaviour
         }
         return false;
     }
-   
-     private void SetUpNumberScene()
+
+    private void SetUpNumberScene()
     {
         pageContainer.GetComponentInChildren<TextMeshPro>().text = "Page " + (currentPage + 1) + "/" + (numberOfPages + 1);
     }
 }
-
    
 
 

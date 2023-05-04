@@ -11,7 +11,8 @@ public class PlayFabController : MonoBehaviour
     public static PlayFabController PFC;
     //public int numberOfLogins;
     private string myID;
-    public string JSON;
+    public string DEMO;
+    public string JSON1;
     public string JSON2;
     public string JSON3;
     public string JSON4;
@@ -20,7 +21,7 @@ public class PlayFabController : MonoBehaviour
     public List<GoogleSurveyData> googleSurveyData;
     private Dictionary<string,string> resultsData;
     private string playFabName;
-    private int numberOfSurveys = 4;
+    private int numberOfSurveys = 5;
 
     //Creates a singlton of this class, an empty googlesurveydata, and resultsdata
     private void OnEnable()
@@ -59,10 +60,19 @@ public class PlayFabController : MonoBehaviour
         {
             if (question._title != null && question._answer != "")
             {
+                Debug.Log("Question " + question._index + " : " + question._title.text + " " + question._answer);
                 tempResults.Add("Question " + question._index + " : " + question._title.text, question._answer);
             }
         }
 
+        int i = 0;
+
+        foreach (float time in GameController.instance.TrialTimes)
+        {
+            tempResults.Add("Time For " +i, time.ToString());
+            i++;
+        }
+       
         string JSONout1 = JsonConvert.SerializeObject(tempResults);
         if (JSONout1 != null)
         {
@@ -76,6 +86,9 @@ public class PlayFabController : MonoBehaviour
             }
             Debug.Log("You have successfully submitted your questionnaire results");
         }
+
+        GameController.instance.EndSurvey();
+        latestIndex++;
         #endregion SURVEY_RESULTS
         #region EXPERIMENT_DATA_RESULTS
         #endregion EXPERIMENT_DATA_RESULTS
@@ -162,22 +175,24 @@ public class PlayFabController : MonoBehaviour
 
     private void UserDataSuccess(GetUserDataResult result)
     {
-        if (result.Data == null || !result.Data.ContainsKey("JSON") || !result.Data.ContainsKey("JSON2"))
+        if (result.Data == null || !result.Data.ContainsKey("JSON1") || !result.Data.ContainsKey("JSON2"))
         {
             Debug.Log("There is no key call JSON in database or the data in the database is empty");
         }
         else
         {
-            JSON = result.Data["JSON"].Value;
+            DEMO = result.Data["DEMO"].Value;
+            JSON1 = result.Data["JSON1"].Value;
             JSON2 = result.Data["JSON2"].Value;
             JSON3 = result.Data["JSON3"].Value;
             JSON4 = result.Data["JSON4"].Value;
-            Debug.Log("JSON & JSON2 has been aquired from database");
  
-                googleSurveyData[0] = JsonConvert.DeserializeObject<GoogleSurveyData>(PlayFabController.PFC.JSON);
-                latestIndex = googleSurveyData[0].count;
-                googleSurveyData[1] = JsonConvert.DeserializeObject<GoogleSurveyData>(PlayFabController.PFC.JSON2);
-      
+            googleSurveyData[0] = JsonConvert.DeserializeObject<GoogleSurveyData>(PlayFabController.PFC.DEMO);
+            googleSurveyData[1] = JsonConvert.DeserializeObject<GoogleSurveyData>(PlayFabController.PFC.JSON1);
+            googleSurveyData[2] = JsonConvert.DeserializeObject<GoogleSurveyData>(PlayFabController.PFC.JSON2);
+            googleSurveyData[3] = JsonConvert.DeserializeObject<GoogleSurveyData>(PlayFabController.PFC.JSON3);
+            googleSurveyData[4] = JsonConvert.DeserializeObject<GoogleSurveyData>(PlayFabController.PFC.JSON4);
+            latestIndex = 0;
         }
     }
 

@@ -42,43 +42,45 @@ extern void ConfigurationSection_ResetModified_m3A4EF275904DF31400B33FD9C4F22537
 extern void ConfigurationSection_SerializeSection_m4526B82EBA81F4B2A049AA668905A27C58A07540 (void);
 // 0x0000000F System.Configuration.ConfigurationElementCollectionType System.Configuration.ConfigurationElementCollection::get_CollectionType()
 extern void ConfigurationElementCollection_get_CollectionType_m26CF49B14935B5F3B2948C477B69AE95A7BAA303 (void);
-// 0x00000010 System.String System.Configuration.ConfigurationElementCollection::get_ElementName()
+// 0x00000010 System.Int32 System.Configuration.ConfigurationElementCollection::get_Count()
+extern void ConfigurationElementCollection_get_Count_mB6BF33F872437348CD9E6FEFF15892F2298AC426 (void);
+// 0x00000011 System.String System.Configuration.ConfigurationElementCollection::get_ElementName()
 extern void ConfigurationElementCollection_get_ElementName_m0B9C2540DC83D244A2CAB89C8BD1471F7682B7E9 (void);
-// 0x00000011 System.Boolean System.Configuration.ConfigurationElementCollection::get_ThrowOnDuplicate()
+// 0x00000012 System.Boolean System.Configuration.ConfigurationElementCollection::get_ThrowOnDuplicate()
 extern void ConfigurationElementCollection_get_ThrowOnDuplicate_mCF2E6A87DA72AB9E0D75BC31B29EE8C8A3078927 (void);
-// 0x00000012 System.Configuration.ConfigurationElement System.Configuration.ConfigurationElementCollection::CreateNewElement()
-// 0x00000013 System.Object System.Configuration.ConfigurationElementCollection::GetElementKey(System.Configuration.ConfigurationElement)
-// 0x00000014 System.Void System.Configuration.ConfigurationCollectionAttribute::.ctor(System.Type)
+// 0x00000013 System.Configuration.ConfigurationElement System.Configuration.ConfigurationElementCollection::CreateNewElement()
+// 0x00000014 System.Object System.Configuration.ConfigurationElementCollection::GetElementKey(System.Configuration.ConfigurationElement)
+// 0x00000015 System.Void System.Configuration.ConfigurationCollectionAttribute::.ctor(System.Type)
 extern void ConfigurationCollectionAttribute__ctor_m1C1204D379E75BB9D1AC794CAD78B0C95FDEDB8D (void);
-// 0x00000015 System.Void System.Configuration.ConfigurationCollectionAttribute::set_AddItemName(System.String)
+// 0x00000016 System.Void System.Configuration.ConfigurationCollectionAttribute::set_AddItemName(System.String)
 extern void ConfigurationCollectionAttribute_set_AddItemName_m7B5F3723064626014EDE93FFDF01090AB7CD359B (void);
-// 0x00000016 System.Void System.Configuration.ConfigurationCollectionAttribute::set_ClearItemsName(System.String)
+// 0x00000017 System.Void System.Configuration.ConfigurationCollectionAttribute::set_ClearItemsName(System.String)
 extern void ConfigurationCollectionAttribute_set_ClearItemsName_mE7EF1AC01BDD0680A89703FE9093DAD0911C0E32 (void);
-// 0x00000017 System.Void System.Configuration.ConfigurationCollectionAttribute::set_CollectionType(System.Configuration.ConfigurationElementCollectionType)
+// 0x00000018 System.Void System.Configuration.ConfigurationCollectionAttribute::set_CollectionType(System.Configuration.ConfigurationElementCollectionType)
 extern void ConfigurationCollectionAttribute_set_CollectionType_m6608678683A576AFF695DFCB83256EA1A94C7331 (void);
-// 0x00000018 System.Void System.Configuration.ConfigurationCollectionAttribute::set_RemoveItemName(System.String)
+// 0x00000019 System.Void System.Configuration.ConfigurationCollectionAttribute::set_RemoveItemName(System.String)
 extern void ConfigurationCollectionAttribute_set_RemoveItemName_m203DE0A488DCE72FDD3A8022647A6E40D1478D07 (void);
-// 0x00000019 System.Void System.Configuration.Provider.ProviderCollection::Add(System.Configuration.Provider.ProviderBase)
+// 0x0000001A System.Void System.Configuration.Provider.ProviderCollection::Add(System.Configuration.Provider.ProviderBase)
 extern void ProviderCollection_Add_m455A9428E13AF185DDE63CDA6AD84308186F8E03 (void);
-// 0x0000001A System.Void System.Configuration.IgnoreSection::.ctor()
+// 0x0000001B System.Void System.Configuration.IgnoreSection::.ctor()
 extern void IgnoreSection__ctor_mDF97B44EFE0B08DF0D7E89F7B79553E010597066 (void);
-// 0x0000001B System.Configuration.ConfigurationPropertyCollection System.Configuration.IgnoreSection::get_Properties()
+// 0x0000001C System.Configuration.ConfigurationPropertyCollection System.Configuration.IgnoreSection::get_Properties()
 extern void IgnoreSection_get_Properties_mE3DBA6242176B6E6438CEEBEB3A48319E9EFF133 (void);
-// 0x0000001C System.Void System.Configuration.IgnoreSection::DeserializeSection(System.Xml.XmlReader)
+// 0x0000001D System.Void System.Configuration.IgnoreSection::DeserializeSection(System.Xml.XmlReader)
 extern void IgnoreSection_DeserializeSection_m622C6FAE1160DCC952A4E36FC9E2DCB9DCC34CEC (void);
-// 0x0000001D System.Boolean System.Configuration.IgnoreSection::IsModified()
+// 0x0000001E System.Boolean System.Configuration.IgnoreSection::IsModified()
 extern void IgnoreSection_IsModified_mB1D57799DA9AE024B99CB05766D5497A3DD8F19F (void);
-// 0x0000001E System.Void System.Configuration.IgnoreSection::Reset(System.Configuration.ConfigurationElement)
+// 0x0000001F System.Void System.Configuration.IgnoreSection::Reset(System.Configuration.ConfigurationElement)
 extern void IgnoreSection_Reset_m8A41B00CEC8C72D608FEE005D438864B5638B84E (void);
-// 0x0000001F System.Void System.Configuration.IgnoreSection::ResetModified()
+// 0x00000020 System.Void System.Configuration.IgnoreSection::ResetModified()
 extern void IgnoreSection_ResetModified_m13E416D3841F85E3B334CF9EB517FFBE9F7E224C (void);
-// 0x00000020 System.String System.Configuration.IgnoreSection::SerializeSection(System.Configuration.ConfigurationElement,System.String,System.Configuration.ConfigurationSaveMode)
+// 0x00000021 System.String System.Configuration.IgnoreSection::SerializeSection(System.Configuration.ConfigurationElement,System.String,System.Configuration.ConfigurationSaveMode)
 extern void IgnoreSection_SerializeSection_m12BD59834DBCACE13758DA83BD3DEF2B8A6F3DBE (void);
-// 0x00000021 System.String System.Configuration.Internal.IConfigErrorInfo::get_Filename()
-// 0x00000022 System.Int32 System.Configuration.Internal.IConfigErrorInfo::get_LineNumber()
-// 0x00000023 System.Void Unity.ThrowStub::ThrowNotSupportedException()
+// 0x00000022 System.String System.Configuration.Internal.IConfigErrorInfo::get_Filename()
+// 0x00000023 System.Int32 System.Configuration.Internal.IConfigErrorInfo::get_LineNumber()
+// 0x00000024 System.Void Unity.ThrowStub::ThrowNotSupportedException()
 extern void ThrowStub_ThrowNotSupportedException_mA14F496FFE8A1B92C4565A9F18F2113E1C1F2A77 (void);
-static Il2CppMethodPointer s_methodPointers[35] = 
+static Il2CppMethodPointer s_methodPointers[36] = 
 {
 	ProviderBase_Initialize_mFC7015388A0935666004EA89121C0DD34AF4D751,
 	ConfigurationElement_get_Properties_m85E584B7C5EAFA411191A245AF41DEC274DE8F93,
@@ -95,6 +97,7 @@ static Il2CppMethodPointer s_methodPointers[35] =
 	ConfigurationSection_ResetModified_m3A4EF275904DF31400B33FD9C4F22537D2922844,
 	ConfigurationSection_SerializeSection_m4526B82EBA81F4B2A049AA668905A27C58A07540,
 	ConfigurationElementCollection_get_CollectionType_m26CF49B14935B5F3B2948C477B69AE95A7BAA303,
+	ConfigurationElementCollection_get_Count_mB6BF33F872437348CD9E6FEFF15892F2298AC426,
 	ConfigurationElementCollection_get_ElementName_m0B9C2540DC83D244A2CAB89C8BD1471F7682B7E9,
 	ConfigurationElementCollection_get_ThrowOnDuplicate_mCF2E6A87DA72AB9E0D75BC31B29EE8C8A3078927,
 	NULL,
@@ -116,49 +119,50 @@ static Il2CppMethodPointer s_methodPointers[35] =
 	NULL,
 	ThrowStub_ThrowNotSupportedException_mA14F496FFE8A1B92C4565A9F18F2113E1C1F2A77,
 };
-static const int32_t s_InvokerIndices[35] = 
+static const int32_t s_InvokerIndices[36] = 
 {
-	4103,
-	8611,
-	4086,
-	8768,
-	8500,
-	8768,
-	7038,
-	8768,
-	2641,
-	2292,
-	7038,
-	8500,
-	8768,
-	2022,
-	8571,
-	8611,
-	8500,
+	4111,
+	8660,
+	4094,
+	8818,
+	8549,
+	8818,
+	7067,
+	8818,
+	2646,
+	2294,
+	7067,
+	8549,
+	8818,
+	2024,
+	8620,
+	8620,
+	8660,
+	8549,
 	0,
 	0,
-	7038,
-	7038,
-	7038,
-	6997,
-	7038,
-	7038,
-	8768,
-	8611,
-	7038,
-	8500,
-	7038,
-	8768,
-	2022,
+	7067,
+	7067,
+	7067,
+	7026,
+	7067,
+	7067,
+	8818,
+	8660,
+	7067,
+	8549,
+	7067,
+	8818,
+	2024,
 	0,
 	0,
-	14998,
+	15108,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_System_Configuration_CodeGenModule;
 const Il2CppCodeGenModule g_System_Configuration_CodeGenModule = 
 {
 	"System.Configuration.dll",
-	35,
+	36,
 	s_methodPointers,
 	0,
 	NULL,

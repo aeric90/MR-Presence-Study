@@ -80,6 +80,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationCollectionAttribute_set_ClearI
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationCollectionAttribute_set_CollectionType_m6608678683A576AFF695DFCB83256EA1A94C7331_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationCollectionAttribute_set_RemoveItemName_m203DE0A488DCE72FDD3A8022647A6E40D1478D07_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElementCollection_get_CollectionType_m26CF49B14935B5F3B2948C477B69AE95A7BAA303_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElementCollection_get_Count_mB6BF33F872437348CD9E6FEFF15892F2298AC426_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElementCollection_get_ElementName_m0B9C2540DC83D244A2CAB89C8BD1471F7682B7E9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElementCollection_get_ThrowOnDuplicate_mCF2E6A87DA72AB9E0D75BC31B29EE8C8A3078927_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_DeserializeElement_m3879FAA612D3277C35E1D596A9A3FD48574C229F_RuntimeMethod_var;
@@ -240,6 +241,13 @@ struct ConfigurationElementCollection_t56E8398661A85A59616301BADF13026FB1492606 
 // System.Configuration.ConfigurationSection
 struct ConfigurationSection_t0BC609F0151B160A4FAB8226679B62AF22539C3E  : public ConfigurationElement_tAE3EE71C256825472831FFBB7F491275DFAF089E
 {
+};
+
+// System.Int32
+struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C 
+{
+	// System.Int32 System.Int32::m_value
+	int32_t ___m_value_0;
 };
 
 // System.IntPtr
@@ -495,6 +503,10 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
 // System.Configuration.ConfigurationSection
 
 // System.Configuration.ConfigurationSection
+
+// System.Int32
+
+// System.Int32
 
 // System.IntPtr
 struct IntPtr_t_StaticFields
@@ -852,6 +864,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ConfigurationElementCollection_get_Co
 	int32_t V_0 = 0;
 	{
 		il2cpp_codegen_raise_profile_exception(ConfigurationElementCollection_get_CollectionType_m26CF49B14935B5F3B2948C477B69AE95A7BAA303_RuntimeMethod_var);
+		il2cpp_codegen_initobj((&V_0), sizeof(int32_t));
+		int32_t L_0 = V_0;
+		return L_0;
+	}
+}
+// System.Int32 System.Configuration.ConfigurationElementCollection::get_Count()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ConfigurationElementCollection_get_Count_mB6BF33F872437348CD9E6FEFF15892F2298AC426 (ConfigurationElementCollection_t56E8398661A85A59616301BADF13026FB1492606* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ConfigurationElementCollection_get_Count_mB6BF33F872437348CD9E6FEFF15892F2298AC426_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	{
+		il2cpp_codegen_raise_profile_exception(ConfigurationElementCollection_get_Count_mB6BF33F872437348CD9E6FEFF15892F2298AC426_RuntimeMethod_var);
 		il2cpp_codegen_initobj((&V_0), sizeof(int32_t));
 		int32_t L_0 = V_0;
 		return L_0;
